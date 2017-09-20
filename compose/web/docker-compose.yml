@@ -1,9 +1,15 @@
-version: '1'
+version: '2.1'
 services:
-    nginx:
-        image: nginx:latest
-        ports:
-            #- "8080:80"
-            - "80"
-            - "443"
-        
+  nginx:
+    image: nginx:latest
+    ports:
+      #- "8080:80"
+      - "443"
+      - "80"
+    volumes:
+      - .:/code
+    links:
+      - php-fpm
+  php-fpm:
+    image: php:7-fpm-alpine
+
