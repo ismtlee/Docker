@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:stable-alpine 
     ports:
       #- "8080:80"
       - "443"
@@ -11,5 +11,5 @@ services:
     links:
       - php-fpm
   php-fpm:
-    image: php:7-fpm-alpine
+    image: ismtlee/php:stable 
 
