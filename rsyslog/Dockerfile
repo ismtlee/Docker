@@ -1,4 +1,5 @@
-FROM gliderlabs/alpine:edge
+#FROM gliderlabs/alpine:edge
+FROM alpine 
 MAINTAINER Smart Lee ismtlee@gmail.com 
 RUN  apk update \
   && apk add rsyslog \
