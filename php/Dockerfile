@@ -17,9 +17,10 @@ RUN apk add --no-cache  \
     && docker-php-ext-configure imap --with-imap --with-imap-ssl \
     && docker-php-ext-install imap \
     && pecl install igbinary \
-    && pecl install redis \
+    && pecl install redis  \
+    && pecl install mongodb \
     && pecl install yaf \
-    && docker-php-ext-enable igbinary redis yaf \
+    && docker-php-ext-enable igbinary redis yaf mongodb \
     && apk del autoconf file g++ gcc binutils isl libatomic libc-dev musl-dev make re2c libstdc++ libgcc binutils-libs mpc1 mpfr3 gmp libgomp \
     && rm -rf /var/cache/apk/*
 

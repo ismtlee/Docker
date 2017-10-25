@@ -21,7 +21,16 @@ RUN apk add --no-cache  \
     && pecl install igbinary \
     && pecl install redis \
     && pecl install yaf \
-    && docker-php-ext-enable igbinary redis yaf \
+    && pecl install mongodb \
+    && docker-php-ext-enable igbinary redis yaf mongodb \
+    && pip3 install --upgrade pip \
+    && pip3 install pymongo \
+    && pip3 install googleads \
+    && pip3 install requests \
+    && pip3 install redis \
+    #&& pip3 install numpy \
+    #&& pip3 install scipy \
+    #&& pip3 install  scrapy \
     && apk del autoconf file g++ gcc binutils isl libatomic libc-dev musl-dev make re2c libstdc++ libgcc binutils-libs mpc1 mpfr3 gmp libgomp \
     && rm -rf /var/cache/apk/* \
     && echo "0 0 * * *    sh /code/scripts/admin2/cron.sh" >> /etc/crontabs/root
