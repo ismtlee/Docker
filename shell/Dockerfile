@@ -40,7 +40,7 @@ RUN apk add --no-cache  --update \
     # gp开发者推广邮件
     && echo "0 6 * * *    sh /code/scripts/email/cron_email.sh" >> /etc/crontabs/root \
     # ivyshare 
-    && echo "*/20 * * * *   sh  /code/ivyshare/application/scripts/cron.sh >> /etc/crontabs/root
+    && echo "*/20 * * * *   sh  /code/ivyshare/application/scripts/cron.sh" >> /etc/crontabs/root
 
 # Show versions
 
