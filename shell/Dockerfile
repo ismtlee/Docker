@@ -38,7 +38,9 @@ RUN apk add --no-cache  --update \
     && echo "0 0 * * *    sh /code/scripts/admin2/report/cron.sh" >> /etc/crontabs/root \
     && echo "0 0 * * *    sh /code/scripts/admin2/report/cron_dawn.sh" >> /etc/crontabs/root \
     # gp开发者推广邮件
-    && echo "0 6 * * *    sh /code/scripts/email/cron_email.sh" >> /etc/crontabs/root
+    && echo "0 6 * * *    sh /code/scripts/email/cron_email.sh" >> /etc/crontabs/root \
+    # ivyshare 
+    && echo "*/20 * * * *   sh  /code/ivyshare/application/scripts/cron.sh >> /etc/crontabs/root
 
 # Show versions
 
