@@ -30,6 +30,7 @@ RUN apk add --no-cache  --update \
     && pip3 install googleads \
     && pip3 install requests \
     && pip3 install redis \
+    && pip3 install psycopg2 \
     #&& pip3 install numpy \
     #&& pip3 install scipy \
     #&& pip3 install  scrapy \
