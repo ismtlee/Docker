@@ -15,6 +15,7 @@ RUN apk add --no-cache  --update \
       openssl-dev \
       python3 \ 
       python3-dev \
+      nodejs \
     && docker-php-ext-install iconv mcrypt mysqli pdo pdo_mysql pdo_pgsql zip bcmath \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
