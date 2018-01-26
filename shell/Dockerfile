@@ -28,6 +28,7 @@ RUN apk add --no-cache  --update \
     && docker-php-ext-enable igbinary redis yaf mongodb \
     && pip3 install --upgrade pip \
     && pip3 install pymongo \
+    && pip3 install pymysql \
     && pip3 install googleads \
     && pip3 install requests \
     && pip3 install redis \
@@ -43,6 +44,8 @@ RUN apk add --no-cache  --update \
     && echo "0 6 * * *    sh /code/scripts/email/cron_email.sh" >> /etc/crontabs/root \
     # ivyshare 
     && echo "*/20 * * * *   sh  /code/ivyshare/application/scripts/cron.sh" >> /etc/crontabs/root
+    # 留存计算
+    && echo "* 1 * * *   sh  /code/scripts/admin/report/cron_ga_rentions.sh" >> /etc/crontabs/root
 
 # Show versions
 
