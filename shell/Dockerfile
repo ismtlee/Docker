@@ -21,7 +21,7 @@ RUN apk add --no-cache  --update \
       zlib-dev \
       curl-dev \
       musl-dev musl-utils musl-dbg libevent-dev libxml2-dev libxslt-dev libffi-dev \
-    && docker-php-ext-install iconv mcrypt mysqli pdo pdo_mysql pdo_pgsql zip bcmath \
+    && docker-php-ext-install iconv mcrypt mysqli pdo pdo_mysql pdo_pgsql pgsql zip bcmath \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
     && docker-php-ext-configure imap --with-imap --with-imap-ssl \
@@ -43,6 +43,7 @@ RUN apk add --no-cache  --update \
     && pip3 install scrapy \
     # https://github.com/googleads/googleads-python-lib/issues/261
     && pip3 install httplib2==0.10.3 \
+    && pip3 install scrapy-splash \ 
     #&& pip3 install numpy \
     #&& pip3 install scipy \
     #&& pip3 install  scrapy \
