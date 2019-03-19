@@ -44,6 +44,7 @@ RUN apk add --no-cache  --update \
     # https://github.com/googleads/googleads-python-lib/issues/261
     && pip3 install httplib2==0.10.3 \
     && pip3 install scrapy-splash \ 
+    && pip3 install facebookads \ 
     #&& pip3 install numpy \
     #&& pip3 install scipy \
     #&& pip3 install  scrapy \
